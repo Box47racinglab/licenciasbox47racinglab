@@ -1,51 +1,40 @@
 <!DOCTYPE html>
 <html>
-<html>
 <head>
-    <title>Registro de Piloto – Box47</title>
+    <title>Licencia Virtual – Box47</title>
     <style>
         body {
             background: black;
             color: white;
             font-family: Daytona, sans-serif;
             text-align: center;
+            padding: 30px;
         }
-        form {
+        .contenedor {
+            border: 2px solid red;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 10px;
             margin-top: 50px;
         }
-        input, select {
-            margin: 10px;
-            padding: 10px;
-            font-size: 16px;
+        h1 {
+            color: red;
         }
-        button {
-            background: red;
-            color: white;
-            border: red;
-            padding: 10px 20px;
+        p {
             font-size: 18px;
         }
     </style>
 </head>
 <body>
-    <h1>Panel de Piloto – Escudería Box47</h1>
-    
-    <!-- Esta es la línea que modifica a dónde se envía el formulario -->
-    <form method="POST" action="/crear_licencia">
-
-        <input name="nombre" placeholder="Nombre del piloto" required><br>
-        <input name="apodo" type="text" placeholder="apodo" required><br>
-        <input name="correo" type="email" placeholder="Correo electrónico" required><br>
-        <input name="nacimiento" type="date" required><br>
-
-        <select name="nivel" required>
-            <option value="Membresía base">Nivel 1 – Membresía base</option>
-            <option value="Next Lap">Nivel 2 – Next Lap</option>
-            <option value="Fast Soul">Nivel 3 – Fast Soul</option>
-            <option value="Apex Core">Nivel 4 – Apex Core</option>
-        </select><br>
-
-        <button type="submit">Crear licencia virtual</button>
-    </form>
+    <div class="contenedor">
+        <h1>Licencia Virtual</h1>
+        <p><strong>Nombre:</strong> {{ licencia.nombre }}</p>
+        <p><strong>Apodo:</strong> {{ licencia.apodo }}</p>
+        <p><strong>Correo:</strong> {{ licencia.correo }}</p>
+        <p><strong>Nacimiento:</strong> {{ licencia.nacimiento }}</p>
+        <p><strong>Nivel:</strong> {{ licencia.nivel }}</p>
+        <br>
+        <p>Gracias por registrarte con <strong>Box47 Racing Lab</strong> 🏁</p>
+    </div>
 </body>
 </html>
